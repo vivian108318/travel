@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嘉義求子療癒之旅 - 導航增強版文青手札</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FAF9F6;
+            --color-sage: #8E9775;
+            --color-earth: #A98467;
+            --color-sand: #E2D1C3;
+            --color-text: #4A4A4A;
+        }
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+        }
+        h1, h2, .font-serif {
+            font-family: 'Noto Serif TC', serif;
+        }
+        .card-soft {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #EAE7E2;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+        }
+        .tab-active {
+            color: var(--color-sage);
+            border-bottom: 2px solid var(--color-sage);
+            font-weight: 700;
+        }
+        .timeline-line {
+            width: 1px;
+            background-color: var(--color-sand);
+            position: absolute;
+            left: 8px;
+            top: 24px;
+            bottom: 0;
+        }
+        .timeline-dot {
+            width: 17px;
+            height: 17px;
+            background-color: var(--color-sage);
+            border: 4px solid #ffffff;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            z-index: 10;
+        }
+        .nav-link {
+            font-size: 11px;
+            color: var(--color-sage);
+            background: #F1F3ED;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 4px;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .nav-link:hover {
+            background: #E5E9DF;
+        }
+    </style>
+</head>
+<body class="pb-16">
+
+    <!-- Header Section -->
+    <header class="pt-12 pb-8 px-6 text-center">
+        <span class="text-xs tracking-[0.2em] text-gray-400 uppercase mb-2 block">Travel Journal</span>
+        <h1 class="text-3xl font-bold text-[#555] mb-2">嘉義．慢行祈願</h1>
+        <p class="text-sm text-gray-400 italic">2025.02.27 — 02.28 | 導航增強版</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-[#FAF9F6]/90 backdrop-blur-md z-50 flex justify-around border-b border-[#EAE7E2] text-sm tracking-widest px-4">
+        <button onclick="showSection('itinerary')" id="tab-itinerary" class="py-4 tab-active">詳細行程</button>
+        <button onclick="showSection('ritual')" id="tab-ritual" class="py-4 text-gray-400">求花儀軌</button>
+        <button onclick="showSection('food')" id="tab-food" class="py-4 text-gray-400">食味攻略</button>
+        <button onclick="showSection('map')" id="tab-map" class="py-4 text-gray-400">地圖導航</button>
+    </nav>
+
+    <!-- Content -->
+    <main class="max-w-md mx-auto px-6 mt-8">
+
+        <!-- Itinerary Section -->
+        <section id="itinerary" class="content-section space-y-10">
+            <div>
+                <h2 class="text-lg font-bold border-b border-gray-200 pb-2 mb-6 flex items-center">
+                    <span class="text-2xl mr-2 text-sage opacity-50">01</span> 第一日：2/27 (五)
+                </h2>
+                <div class="space-y-8 ml-2 relative">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="relative pl-8">
+                        <div class="timeline-dot"></div>
+                        <span class="text-[10px] text-gray-400 tracking-tighter">06:30 — 10:30</span>
+                        <h3 class="font-medium text-gray-700">新店啟程 → 朴子</h3>
+                        <p class="text-xs text-gray-400 mt-1">國3南下建議 07:00 前通過土城段避開塞車。</p>
+                    </div>
+
+                    <div class="relative pl-8">
+                        <div class="timeline-dot"></div>
+                        <span class="text-[10px] text-gray-400 tracking-tighter">10:30 — 12:30</span>
+                        <h3 class="font-medium text-gray-700">朴子配天宮 <a href="https://www.google.com/maps/search/?api=1&query=朴子配天宮" target="_blank" class="nav-link">🧭 導航</a></h3>
+                        <p class="text-xs text-gray-400 mt-1">主要目的地。求花、參拜，預留 2 小時。</p>
+                    </div>
+
+                    <div class="relative pl-8">
+                        <div class="timeline-dot"></div>
+                        <span class="text-[10px] text-gray-400 tracking-tighter">12:30 — 13:30</span>
+                        <h3 class="font-medium text-gray-700">朴子午餐 <a href="https://www.google.com/maps/search/?api=1&query=朴子真好味小吃" target="_blank" class="nav-link">🧭 導航</a></h3>
+                        <p class="text-xs text-gray-400 mt-1">推薦：真好味小吃 (鴨魯飯) 或 朴子車站黑肉飯。</p>
+                    </div>
+
+                    <div class="relative pl-8">
+                        <div class="timeline-dot"></div>
+                        <span class="text-[10px] text-gray-400 tracking-tighter">13:30 — 16:00</span>
+                        <h3 class="font-medium text-gray-700">蒜頭糖廠 <a href="https://www.google.com/maps/search/?api=1&query=蒜頭糖廠" target="_blank" class="nav-link">🧭 導航</a> & 用九柑仔店 <a href="https://www.google.com/maps/search/?api=1&query=用九柑仔店" target="_blank" class="nav-link">🧭 導航</a></h3>
+                        <p class="text-xs text-gray-400 mt-1">復古糖廠與《用九柑仔店》拍攝場景，都在朴子隔邊。</p>
+                    </div>
+
+                    <div class="relative pl-8">
+                        <div class="timeline-dot"></div>
+                        <span class="text-[10px] text-gray-400 tracking-tighter">17:00 —</span>
+                        <h3 class="font-medium text-gray-700">麗景休閒旅館 Check-in <a href="https://www.google.com/maps/search/?api=1&query=麗景精品休閒旅館" target="_blank" class="nav-link">🧭 導航</a></h3>
+                        <p class="text-xs text-gray-400 mt-1">東區嘉南街，進房休息後再出發去夜市。</p>
+                    </div>
+
+                    <div class="relative pl-8">
+                        <div class="timeline-dot"></div>
+                        <span class="text-[10px] text-gray-400 tracking-tighter">18:30 — 21:00</span>
+                        <h3 class="font-medium text-gray-700">文化路夜市 <a href="https://www.google.com/maps/search/?api=1&query=文化路夜市" target="_blank" class="nav-link">🧭 導航</a></h3>
+                        <p class="text-xs text-gray-400 mt-1">晚餐與宵夜，建議步行或搭車前往。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-lg font-bold border-b border-gray-200 pb-2 mb-6 flex items-center">
+                    <span class="text-2xl mr-2 text-sage opacity-50">02</span> 第二日：2/28 (六)
+                </h2>
+                <div class="space-y-8 ml-2 relative">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="relative pl-8">
+                        <div class="timeline-dot"></div>
+                        <span class="text-[10px] text-gray-400 tracking-tighter">09:30 — 11:30</span>
+                        <h3 class="font-medium text-gray-700">嘉義公園 & 射日塔 <a href="https://www.google.com/maps/search/?api=1&query=嘉義公園射日塔" target="_blank" class="nav-link">🧭 導航</a></h3>
+                        <p class="text-xs text-gray-400 mt-1">包含 KANO Park 與 昭和十八 <a href="https://www.google.com/maps/search/?api=1&query=昭和十八J18" target="_blank" class="nav-link">🧭 導航</a>，充滿芬多精。</p>
+                    </div>
+
+                    <div class="relative pl-8">
+                        <div class="timeline-dot"></div>
+                        <span class="text-[10px] text-gray-400 tracking-tighter">12:00 — 13:30</span>
+                        <h3 class="font-medium text-gray-700">市區午餐 & 買伴手禮 <a href="https://www.google.com/maps/search/?api=1&query=嘉義火雞肉飯" target="_blank" class="nav-link">🧭 導航</a></h3>
+                        <p class="text-xs text-gray-400 mt-1">最後品嚐火雞肉飯，順便採購名產。</p>
+                    </div>
+
+                    <div class="relative pl-8">
+                        <div class="timeline-dot"></div>
+                        <span class="text-[10px] text-gray-400 tracking-tighter">14:00 — 15:30</span>
+                        <h3 class="font-medium text-gray-700">愛木村 <a href="https://www.google.com/maps/search/?api=1&query=愛木村" target="_blank" class="nav-link">🧭 導航</a></h3>
+                        <p class="text-xs text-gray-400 mt-1">室內互動館，適合放鬆遊覽。</p>
+                    </div>
+
+                    <div class="relative pl-8">
+                        <div class="timeline-dot"></div>
+                        <span class="text-[10px] text-gray-400 tracking-tighter">16:00 —</span>
+                        <h3 class="font-medium text-gray-700">回程休息站 <a href="https://www.google.com/maps/search/?api=1&query=古坑服務區" target="_blank" class="nav-link">🧭 導航</a></h3>
+                        <p class="text-xs text-gray-400 mt-1">沿途回程在古坑或南投停留，傍晚返抵新店。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ritual Section -->
+        <section id="ritual" class="content-section hidden animate-fadeIn">
+            <div class="card-soft p-8 space-y-6 border-t-4 border-t-[#8E9775]">
+                <h3 class="text-xl font-serif font-bold text-[#6B705C] text-center">
+                    配天宮求花儀軌 <a href="https://www.google.com/maps/search/?api=1&query=朴子配天宮" target="_blank" class="nav-link">🧭 導航</a>
+                </h3>
+                <div class="space-y-6 text-sm leading-relaxed text-gray-500">
+                    <div class="flex gap-4">
+                        <span class="text-[#8E9775] font-serif">壹</span>
+                        <p>於服務台填寫求子資料，領取心願單。</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-[#8E9775] font-serif">貳</span>
+                        <p>依序向各殿神明參拜，告知今日來意。</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-[#8E9775] font-serif">參</span>
+                        <p>跪於正殿媽祖前，詳細報上夫妻資訊，請求賜花（白花求男/紅花求女）。</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-[#8E9775] font-serif">肆</span>
+                        <p>擲筊需「連續三聖筊」，若未達，可稍作休息後再次祈求。</p>
+                    </div>
+                </div>
+                
+                <hr class="border-gray-100">
+
+                <div class="space-y-3">
+                    <h4 class="font-bold text-[#A98467] text-sm">⚠️ 備忘事項</h4>
+                    <ul class="text-xs text-gray-500 space-y-2 leading-5">
+                        <li class="flex items-start"><span class="mr-2">•</span> 獲得花後，需過香爐三圈。</li>
+                        <li class="flex items-start"><span class="mr-2">•</span> 回家後將花置於主臥房，不可有灰塵髒污。</li>
+                        <li class="flex items-start"><span class="mr-2">•</span> 若順利懷孕，記得生產後再來還願喔！</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Food Section -->
+        <section id="food" class="content-section hidden space-y-6">
+            <div class="card-soft p-6">
+                <h3 class="text-sm font-bold text-[#A98467] mb-4 tracking-widest border-b pb-2">🍗 雞肉飯攻略</h3>
+                <ul class="text-sm space-y-3 text-gray-600">
+                    <li class="flex justify-between items-center">
+                        <span>阿霞火雞肉飯 <a href="https://www.google.com/maps/search/?api=1&query=阿霞火雞肉飯" target="_blank" class="nav-link">🧭 導航</a></span>
+                        <span class="text-[10px] text-gray-400 italic">夜市必吃/生蚵推</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span>劉里長雞肉飯 <a href="https://www.google.com/maps/search/?api=1&query=劉里長雞肉飯" target="_blank" class="nav-link">🧭 導航</a></span>
+                        <span class="text-[10px] text-gray-400 italic">午餐熱門/醬汁厚</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span>和平火雞肉飯 <a href="https://www.google.com/maps/search/?api=1&query=和平火雞肉飯" target="_blank" class="nav-link">🧭 導航</a></span>
+                        <span class="text-[10px] text-gray-400 italic">近旅館/在地人推</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span>郭家雞肉飯 <a href="https://www.google.com/maps/search/?api=1&query=郭家雞肉飯" target="_blank" class="nav-link">🧭 導航</a></span>
+                        <span class="text-[10px] text-gray-400 italic">文化路老店/糯米大腸</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card-soft p-6">
+                <h3 class="text-sm font-bold text-[#A98467] mb-4 tracking-widest border-b pb-2">🏮 夜市必喝必買</h3>
+                <ul class="text-sm space-y-3 text-gray-600">
+                    <li class="flex justify-between items-center">
+                        <span>御香屋 (葡萄柚綠) <a href="https://www.google.com/maps/search/?api=1&query=御香屋" target="_blank" class="nav-link">🧭 導航</a></span>
+                        <span class="text-[10px] text-gray-400 italic">建議一早電話預訂</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span>林聰明沙鍋魚頭 <a href="https://www.google.com/maps/search/?api=1&query=林聰明沙鍋魚頭" target="_blank" class="nav-link">🧭 導航</a></span>
+                        <span class="text-[10px] text-gray-400 italic">排隊長/推外帶包</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span>阿娥豆花 <a href="https://www.google.com/maps/search/?api=1&query=阿娥豆花" target="_blank" class="nav-link">🧭 導航</a></span>
+                        <span class="text-[10px] text-gray-400 italic">豆漿基底/必配油條</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card-soft p-6">
+                <h3 class="text-sm font-bold text-[#A98467] mb-4 tracking-widest border-b pb-2">🎁 嘉義伴手禮</h3>
+                <ul class="text-sm space-y-3 text-gray-600">
+                    <li class="flex justify-between items-center">
+                        <span>老楊方塊酥 <a href="https://www.google.com/maps/search/?api=1&query=老楊方塊酥" target="_blank" class="nav-link">🧭 導航</a></span>
+                        <span class="text-[10px] text-gray-400 italic">推鹹蛋黃/交流道好買</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span>貓尾巴泡芙 <a href="https://www.google.com/maps/search/?api=1&query=貓尾巴麵包店" target="_blank" class="nav-link">🧭 導航</a></span>
+                        <span class="text-[10px] text-gray-400 italic">2點出爐/旅館附近</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span>福義軒蛋捲 <a href="https://www.google.com/maps/search/?api=1&query=福義軒" target="_blank" class="nav-link">🧭 導航</a></span>
+                        <span class="text-[10px] text-gray-400 italic">博愛路總店/博愛路代購</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section id="map" class="content-section hidden">
+            <div class="space-y-4">
+                <div class="p-4 bg-yellow-50 rounded-lg text-xs text-yellow-700 leading-5 mb-4">
+                    💡 <strong>移動提示：</strong> 以下按鈕點擊後將直接啟動手機 Google Maps。連假期間嘉義市中心建議步行，車停在旅館或垂楊路停車場。
+                </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=朴子配天宮" target="_blank" class="flex items-center justify-between p-5 card-soft hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-bold">1. 朴子配天宮 (目的地)</h4>
+                    <span class="text-sage">🧭 導航</span>
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=麗景精品休閒旅館" target="_blank" class="flex items-center justify-between p-5 card-soft hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-bold">2. 麗景精品休閒旅館 (住宿)</h4>
+                    <span class="text-sage">🧭 導航</span>
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=嘉義文化路夜市" target="_blank" class="flex items-center justify-between p-5 card-soft hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-bold">3. 文化路夜市 (美食)</h4>
+                    <span class="text-sage">🧭 導航</span>
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=嘉義公園射日塔" target="_blank" class="flex items-center justify-between p-5 card-soft hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-bold">4. 嘉義公園 / 昭和十八</h4>
+                    <span class="text-sage">🧭 導航</span>
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=愛木村" target="_blank" class="flex items-center justify-between p-5 card-soft hover:bg-gray-50 transition-colors">
+                    <h4 class="text-sm font-bold">5. 愛木村 (木製工坊)</h4>
+                    <span class="text-sage">🧭 導航</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-20 mb-10 text-center opacity-30 text-[10px] tracking-widest leading-loose px-10">
+        STAY CALM AND PRAY FOR FLOWERS.<br>
+        祝這趟旅程順利開花結果
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.add('hidden'));
+            document.querySelectorAll('nav button').forEach(b => {
+                b.classList.remove('tab-active');
+                b.classList.add('text-gray-400');
+            });
+            
+            document.getElementById(sectionId).classList.remove('hidden');
+            const activeTab = document.getElementById('tab-' + sectionId);
+            activeTab.classList.add('tab-active');
+            activeTab.classList.remove('text-gray-400');
+
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
